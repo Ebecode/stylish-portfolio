@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 @import "config";
 
+// Note: I'm designingfor mobile first
 body,
 html {
   margin: 0;
@@ -16,7 +17,22 @@ a {
   text-decoration: none;
   color: $accent;
 }
+.divider,
+.banner,
+.services,
+.portfolio {
+  padding: 0 1rem;
+  box-sizing: border-box;
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  p {
+    font-size: 1.8rem;
 
+    text-align: center;
+  }
+}
 .banner {
   width: 100%;
   height: 102vh;
@@ -29,28 +45,19 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    h1 {
-      font-size: 6rem;
-      margin: 0;
-    }
-    p {
-      font-size: 2rem;
-    }
   }
   &.banner-2 {
-    h1 {
-      font-size: 3rem;
-      text-align: center;
-    }
     background: $pencil-2;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
   }
+  p {
+    font-weight: bold;
+  }
 }
 
 .divider {
-  margin: 0;
   height: 60vh;
   width: 100%;
   display: flex;
@@ -64,7 +71,7 @@ a {
   p {
     font-size: 1.2rem;
   }
-  &.blue {
+  &.accent {
     background-color: $accent;
     color: $light;
     .btn-box {
@@ -80,6 +87,57 @@ a {
   }
 }
 
+.services {
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $accent;
+  color: $light;
+  margin: 0;
+
+  .service {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .circle {
+      background-color: $light;
+      border: none;
+      border-radius: 100%;
+      color: $accent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+.services,
+.portfolio {
+  padding: 6rem 1rem;
+  h1,
+  h2 {
+    margin: 0;
+    text-align: center;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .complementary {
+    margin: 0;
+    text-align: center;
+    color: $complementary;
+  }
+}
+
+footer {
+  background-color: $light;
+}
+
 // links
 .btn {
   text-decoration: none;
@@ -88,7 +146,7 @@ a {
   border-radius: 4px;
   font-weight: bold;
   margin: 3px;
-  &.blue {
+  &.accent {
     background-color: $accent;
     color: $light;
   }
@@ -100,10 +158,4 @@ a {
     background-color: $light;
     color: $dark;
   }
-}
-
-.services {
-  background-color: $accent;
-  color: $light;
-  margin: 0;
 }
