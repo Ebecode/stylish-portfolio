@@ -10,13 +10,70 @@ html {
   color: $black;
   font-family: "Source Sans Pro", sans-serif;
 }
-nav {
-  display: none;
-}
 a {
   text-decoration: none;
   color: $accent;
 }
+.nav-collapse {
+  position: fixed;
+  height: 100vh;
+  min-width: 250px;
+
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  color: $light;
+  background-color: darken($color: $accent, $amount: 5%);
+
+  z-index: 2;
+
+  h1 {
+    background-color: darken($color: $accent, $amount: 10%);
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin: 0;
+    padding: 1.5rem 1rem;
+  }
+  li {
+    list-style: none;
+    margin-left: -1.2rem;
+    padding: 1rem 0;
+    .menu-link {
+      text-decoration: none;
+      font-size: 1rem;
+      color: $light;
+    }
+  }
+}
+
+.hov-btn {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 3;
+  box-sizing: border-box;
+  &.menu-btn {
+    background-color: transparentize($color: $dark, $amount: 0.5);
+    top: 16px;
+    right: 16px;
+  }
+  &.back-top {
+    bottom: 16px;
+    right: 16px;
+    background-color: transparentize($color: $dark, $amount: 0.5);
+  }
+  i {
+    color: $light;
+  }
+}
+
 .divider,
 .banner,
 .services,
@@ -58,7 +115,7 @@ a {
 }
 
 .divider {
-  height: 60vh;
+  height: 95vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -131,6 +188,7 @@ a {
   .complementary {
     margin: 0;
     text-align: center;
+    text-transform: uppercase;
     color: $complementary;
   }
 }
@@ -166,7 +224,7 @@ a {
 
         color: $light;
         background-color: transparentize($color: $accent, $amount: 0.8);
-        z-index: 2;
+        z-index: 1;
       }
       &.p1 {
         background-image: $img-1;
