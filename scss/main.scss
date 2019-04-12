@@ -69,6 +69,12 @@ a {
     right: 16px;
     background-color: transparentize($color: $dark, $amount: 0.5);
   }
+  &:hover {
+    background-color: darken(
+      $color: transparentize($color: $dark, $amount: 0.5),
+      $amount: 20%
+    );
+  }
   i {
     color: $light;
   }
@@ -298,13 +304,22 @@ footer {
   &.accent {
     background-color: $accent;
     color: $light;
+    &:hover {
+      background-color: darken($color: $accent, $amount: 15%);
+    }
   }
   &.dark {
     background-color: $dark;
     color: $light;
+    &:hover {
+      background-color: darken($color: $dark, $amount: 8%);
+    }
   }
   &.light {
     background-color: $light;
     color: $dark;
+    &:hover {
+      background-color: darken($color: $light, $amount: 8%);
+    }
   }
 }

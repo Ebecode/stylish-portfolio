@@ -55,6 +55,8 @@ a {
     bottom: 16px;
     right: 16px;
     background-color: rgba(51, 51, 51, 0.5); }
+  .hov-btn:hover {
+    background-color: rgba(0, 0, 0, 0.5); }
   .hov-btn i {
     color: #eee; }
 
@@ -256,9 +258,15 @@ footer {
   .btn.accent {
     background-color: #1e8bc3;
     color: #eee; }
+    .btn.accent:hover {
+      background-color: #145c81; }
   .btn.dark {
     background-color: #333;
     color: #eee; }
+    .btn.dark:hover {
+      background-color: #1f1f1f; }
   .btn.light {
     background-color: #eee;
     color: #333; }
+    .btn.light:hover {
+      background-color: #dadada; }
