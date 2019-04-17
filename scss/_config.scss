@@ -13,5 +13,10 @@ $pencil-2: url(https://images.unsplash.com/photo-1510070009289-b5bc34383727?ixli
 
 $img-1: url(https://images.unsplash.com/photo-1510070112810-d4e9a46d9e91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
 $img-2: url(https://images.unsplash.com/photo-1509537257950-20f875b03669?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
-$img-3: url(https://images.unsplash.com/photo-1540292618247-e7fc8c43c709?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80);
+$img-3: url(https://images.unsplash.com/photo-1473229903343-d7903343f6c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80);
 $img-4: url(https://images.unsplash.com/photo-1516201580490-33550d32de5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+
+// transitions
+@mixin easeOut {
+  transition: all 0.5s ease-out;
+}
