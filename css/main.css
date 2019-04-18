@@ -89,7 +89,7 @@ a {
 
 .banner {
   width: 100%;
-  height: 102vh;
+  height: 110vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,7 +100,7 @@ a {
     background-repeat: no-repeat;
     background-position: center; }
     .banner.banner-1 h1 {
-      font-size: 5rem;
+      font-size: 4rem;
       font-weight: 700;
       margin: 0; }
   .banner.banner-2 {
@@ -112,7 +112,6 @@ a {
     font-weight: bold; }
 
 .divider {
-  height: 95vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -123,6 +122,10 @@ a {
     font-weight: bold; }
   .divider p {
     font-size: 1.2rem; }
+  .divider.divider-1 {
+    height: 110vh; }
+  .divider.divider-2 {
+    height: 75vh; }
   .divider.accent {
     background-color: #1e8bc3;
     color: #eee; }
@@ -137,10 +140,11 @@ a {
     color: #333; }
 
 .services {
-  min-height: 80vh;
+  min-height: 50vh;
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: #1e8bc3;
   color: #eee;
   margin: 0; }
@@ -235,7 +239,7 @@ a {
 
 .map {
   width: 100%;
-  height: 60vh; }
+  height: 75vh; }
 
 footer {
   height: 50vh;
@@ -290,3 +294,71 @@ footer {
     .btn.light:hover {
       background-color: #dadada;
       transition: all 0.5s ease-out; }
+
+@media only screen and (min-width: 426px) {
+  .banner-1,
+  .map {
+    height: 70vh; }
+  .divider.divider-1 {
+    height: 70vh; }
+  .divider.divider-2 {
+    height: 50vh; }
+  .services {
+    height: 110vh; }
+    .services .service-box {
+      display: grid;
+      grid-template-areas: "s1 s2" "s3 s4"; }
+      .services .service-box .s1 {
+        grid-area: s1; }
+      .services .service-box .s2 {
+        grid-area: s2; }
+      .services .service-box .s3 {
+        grid-area: s3; }
+      .services .service-box .s4 {
+        grid-area: s4; }
+  .portfolio {
+    padding: 15%; }
+  footer {
+    height: 40vh; } }
+
+@media only screen and (min-width: 769px) {
+  .banner-1 {
+    height: 110vh; }
+    .banner-1 h1 {
+      transform: scale(1.5, 1.2); }
+  .banner-2 {
+    height: 70vh; }
+  .divider.divider-1 {
+    height: 50vh; }
+  .divider.divider-2 {
+    height: 40vh; }
+  .services {
+    padding: 10% 0;
+    height: 55vh; }
+    .services .service-box {
+      display: flex; }
+  .portfolio {
+    height: 90vh;
+    padding: 3rem; }
+    .portfolio .projects {
+      display: grid;
+      grid-template-areas: "p1 p2" "p3 p4";
+      padding: 3rem 0; }
+      .portfolio .projects .project {
+        margin: 0;
+        height: 30vh; }
+        .portfolio .projects .project .layer {
+          height: 30vh;
+          margin: 0; }
+        .portfolio .projects .project.p1 {
+          grid-area: p1; }
+        .portfolio .projects .project.p2 {
+          grid-area: p2; }
+        .portfolio .projects .project.p3 {
+          grid-area: p3; }
+        .portfolio .projects .project.p4 {
+          grid-area: p4; }
+  .map {
+    height: 45vh; }
+  footer {
+    height: 30vh; } }
