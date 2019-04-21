@@ -79,10 +79,7 @@ a {
     background-color: transparentize($color: $dark, $amount: 0.5);
   }
   &:hover {
-    background-color: darken(
-      $color: transparentize($color: $dark, $amount: 0.5),
-      $amount: 20%
-    );
+    background-color: $dark;
     cursor: pointer;
     @include easeOut();
   }
@@ -432,6 +429,10 @@ footer {
         .layer {
           height: 60vh;
           margin: 0;
+          &:hover {
+            background-color: transparentize($color: $accent, $amount: 0.1);
+            @include easeOut();
+          }
         }
         &.p1 {
           grid-area: p1;
@@ -444,6 +445,11 @@ footer {
         }
         &.p4 {
           grid-area: p4;
+        }
+        &:hover {
+          transform: scale(0.9); //might fix with javascript later
+          @include easeOut();
+          cursor: pointer;
         }
       }
     }
