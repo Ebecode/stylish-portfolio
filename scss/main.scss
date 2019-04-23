@@ -9,23 +9,33 @@ html {
   padding: 0;
   color: $black;
   font-family: "Source Sans Pro", sans-serif;
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
   color: $accent;
 }
 .nav-collapse {
-  position: fixed;
   height: 100vh;
   min-width: 250px;
 
-  top: 0;
-  right: -250px;
   box-sizing: border-box;
   color: $light;
   background-color: darken($color: $accent, $amount: 5%);
 
   z-index: 2;
+  &.shown {
+    @include easeOut();
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  &.hidden {
+    @include easeOut();
+    position: fixed;
+    top: 0;
+    right: -250px;
+  }
 
   h1 {
     background-color: darken($color: $accent, $amount: 10%);
@@ -77,6 +87,19 @@ a {
     bottom: 16px;
     right: 16px;
     background-color: transparentize($color: $dark, $amount: 0.5);
+    &.invisible {
+      background-color: transparent;
+      cursor: default;
+      i {
+        color: transparent;
+        cursor: default;
+      }
+      @include easeOut();
+    }
+    &.visible {
+      visibility: visible;
+      @include easeOut();
+    }
   }
   &:hover {
     background-color: $dark;
@@ -421,35 +444,38 @@ footer {
     padding: 3rem;
     .projects {
       display: grid;
-      grid-template-areas: "p1 p2" "p3 p4";
+      grid-template-areas: "box1 box2" "box3 box4";
       padding: 3rem;
-      .project {
-        margin: 0;
+      .project-box {
         height: 60vh;
-        .layer {
-          height: 60vh;
-          margin: 0;
-          &:hover {
-            background-color: transparentize($color: $accent, $amount: 0.1);
-            @include easeOut();
-          }
+        &.box1 {
+          grid-area: box1;
         }
-        &.p1 {
-          grid-area: p1;
+        &.box2 {
+          grid-area: box2;
         }
-        &.p2 {
-          grid-area: p2;
+        &.box3 {
+          grid-area: box3;
         }
-        &.p3 {
-          grid-area: p3;
+        &.box4 {
+          grid-area: box4;
         }
-        &.p4 {
-          grid-area: p4;
-        }
-        &:hover {
-          transform: scale(0.9); //might fix with javascript later
+        &:hover .project {
           @include easeOut();
+          transform: scale(0.9);
           cursor: pointer;
+        }
+        .project {
+          margin: 0;
+          height: 60vh;
+          .layer {
+            height: 60vh;
+            margin: 0;
+            &:hover {
+              background-color: transparentize($color: $accent, $amount: 0.1);
+              @include easeOut();
+            }
+          }
         }
       }
     }
